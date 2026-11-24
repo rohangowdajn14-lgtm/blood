@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | BloodConnect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+    <div class="logo">🩸 BloodConnect</div>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/login">Donor Login</a>
+    </nav>
+</header>
+
+<section class="register-section">
+    <div class="register-heading">
+        <h1>Admin Login 🔐</h1>
+        <p>Welcome to the BloodConnect Administration Portal.</p>
+    </div>
+
+    <form class="register-form" method="POST" action="/admin-login">
+
+        <label>Admin Username</label>
+        <input type="text" name="username"
+               placeholder="Enter admin username" required>
+
+        <label>Admin Password</label>
+        <input type="password" name="password"
+               placeholder="Enter admin password" required>
+
+        <button type="submit" class="btn register-button">
+            Login as Admin
+        </button>
+
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 BloodConnect | Every Drop Counts ❤️</p>
+</footer>
+
+</body>
+</html>

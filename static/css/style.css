@@ -1,0 +1,415 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fffafa;
+    color: #333;
+}
+
+/* Navigation */
+header {
+    background: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #c90024;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    margin-left: 28px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #c90024;
+}
+
+/* Hero section */
+.hero {
+    min-height: 570px;
+    padding: 65px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 45px;
+    background: linear-gradient(120deg, #fff0f1, #ffe0e4);
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.tag {
+    color: #c90024;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    line-height: 1.2;
+    margin: 20px 0;
+    color: #292929;
+}
+
+.hero h1 span {
+    color: #c90024;
+}
+
+.hero p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #555;
+    max-width: 530px;
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    flex: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(120,0,20,0.18);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: #c90024;
+    color: white;
+    padding: 15px 27px;
+    text-decoration: none;
+    border-radius: 8px;
+    margin: 5px 8px 5px 0;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #97001b;
+    transform: translateY(-3px);
+}
+
+.secondary {
+    background: #333;
+}
+
+.secondary:hover {
+    background: #555;
+}
+
+/* About section */
+.about {
+    padding: 75px 7%;
+    text-align: center;
+    background: white;
+}
+
+.about h2 {
+    color: #c90024;
+    font-size: 35px;
+    margin-bottom: 18px;
+}
+
+.about > p {
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.8;
+    color: #666;
+    font-size: 16px;
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 45px;
+}
+
+.card {
+    background: #fffafa;
+    padding: 35px 25px;
+    border-radius: 15px;
+    border: 1px solid #ffe0e4;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(150,0,25,0.12);
+}
+
+.card h3 {
+    color: #c90024;
+    margin-bottom: 18px;
+    font-size: 21px;
+}
+
+.card p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.card a {
+    color: #c90024;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background: #242424;
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+footer h2 {
+    color: #ff536b;
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin: 8px 0;
+    color: #ddd;
+}
+
+/* Mobile responsive design */
+@media (max-width: 800px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Registration Page */
+
+.register-section {
+    background: linear-gradient(135deg, #fff0f1, #ffe0e4);
+    padding: 65px 20px;
+    min-height: 750px;
+}
+
+.register-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.register-heading h1 {
+    color: #c90024;
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.register-heading p {
+    color: #666;
+    font-size: 17px;
+}
+
+.register-form {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(100,0,20,0.12);
+    display: flex;
+    flex-direction: column;
+}
+
+.register-form label {
+    font-weight: 600;
+    margin: 14px 0 8px;
+    color: #333;
+}
+
+.register-form input,
+.register-form select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    background: #fffafa;
+}
+
+.register-form input:focus,
+.register-form select:focus {
+    border-color: #c90024;
+    box-shadow: 0 0 5px rgba(201,0,36,0.2);
+}
+
+.register-button {
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 25px;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .register-form {
+        padding: 25px 20px;
+    }
+
+    .register-heading h1 {
+        font-size: 28px;
+    }
+}
+
+/* Find Blood Page */
+
+.search-section {
+    min-height: 650px;
+    padding: 65px 20px;
+    background: linear-gradient(135deg, #fff0f1, #ffe0e4);
+}
+
+.search-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.search-heading h1 {
+    color: #c90024;
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.search-heading p {
+    color: #666;
+    font-size: 17px;
+}
+
+.search-form {
+    max-width: 550px;
+    margin: auto;
+    padding: 35px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(100,0,20,0.12);
+    display: flex;
+    flex-direction: column;
+}
+
+.search-form label {
+    font-weight: bold;
+    margin: 15px 0 8px;
+}
+
+.search-form input,
+.search-form select {
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fffafa;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-form input:focus,
+.search-form select:focus {
+    border-color: #c90024;
+}
+
+.search-button {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 25px;
+}
+
+/* Search Results */
+
+.results {
+    max-width: 850px;
+    margin: 50px auto 0;
+    text-align: center;
+}
+
+.results h2 {
+    color: #c90024;
+    margin-bottom: 25px;
+}
+
+.donor-card {
+    background: white;
+    padding: 25px;
+    margin: 18px 0;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    border-left: 5px solid #c90024;
+}
+
+.donor-card h3 {
+    color: #c90024;
+    margin-bottom: 12px;
+    font-size: 21px;
+}
+
+.donor-card p {
+    margin: 8px 0;
+    color: #555;
+    line-height: 1.5;
+}

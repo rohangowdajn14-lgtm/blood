@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Login | BloodConnect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+    <div class="logo">🩸 BloodConnect</div>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/register">Register</a>
+        <a href="/search">Find Blood</a>
+        <a href="/login">Login</a>
+    </nav>
+</header>
+
+<section class="register-section">
+
+    <div class="register-heading">
+        <h1>Welcome Back ❤️</h1>
+        <p>Login to your BloodConnect donor account.</p>
+    </div>
+
+    <form class="register-form" method="POST" action="/login">
+
+        <label>Email Address</label>
+        <input type="email" name="email"
+               placeholder="Enter your registered email" required>
+
+        <label>Password</label>
+        <input type="password" name="password"
+               placeholder="Enter your password" required>
+
+        <button type="submit" class="btn register-button">
+            Login
+        </button>
+
+        <p style="text-align:center; margin-top:20px;">
+            New donor?
+            <a href="/register" style="color:#c90024;">Register here</a>
+        </p>
+
+    </form>
+
+</section>
+
+<footer>
+    <h2>🩸 BloodConnect</h2>
+    <p>Connecting Donors. Saving Lives.</p>
+    <p>© 2026 BloodConnect. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

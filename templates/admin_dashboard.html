@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | BloodConnect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+        .admin-container {
+            max-width: 1150px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .admin-welcome {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .admin-stats {
+            background: #fff0f2;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .admin-stats h2 {
+            color: #c90024;
+            font-size: 36px;
+        }
+
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        .admin-table th,
+        .admin-table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .admin-table th {
+            background: #c90024;
+            color: white;
+        }
+
+        .admin-table tr:nth-child(even) {
+            background: #fff5f6;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        .admin-logout {
+            display: inline-block;
+            background: #c90024;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🩸 BloodConnect</div>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/admin-logout">Logout</a>
+    </nav>
+</header>
+
+<div class="admin-container">
+
+    <div class="admin-welcome">
+        <h1>Admin Dashboard ❤️</h1>
+        <p>Welcome, {{ admin_username }}!</p>
+        <p>Manage BloodConnect donor information.</p>
+    </div>
+
+    <div class="admin-stats">
+        <h3>Total Registered Donors</h3>
+        <h2>{{ total_donors }}</h2>
+    </div>
+
+    <h2>Registered Donors</h2>
+
+    <div class="table-wrapper">
+        <table class="admin-table">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Blood Group</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>City</th>
+            </tr>
+
+            {% for donor in donors %}
+            <tr>
+                <td>{{ donor[0] }}</td>
+                <td>{{ donor[1] }}</td>
+                <td>{{ donor[2] }}</td>
+                <td>{{ donor[3] }}</td>
+                <td>{{ donor[4] }}</td>
+                <td>{{ donor[5] }}</td>
+                <td>{{ donor[6] }}</td>
+                <td>{{ donor[7] }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="8">No donors registered yet.</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 BloodConnect | Every Drop Counts ❤️</p>
+</footer>
+
+</body>
+</html>

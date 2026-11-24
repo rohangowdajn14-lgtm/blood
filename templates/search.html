@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Blood Donors | BloodConnect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+    <div class="logo">🩸 BloodConnect</div>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/#about">About Us</a>
+        <a href="/register">Register</a>
+        <a href="/search">Find Blood</a>
+    </nav>
+</header>
+
+<section class="search-section">
+
+    <div class="search-heading">
+        <h1>Find Blood Donors ❤️</h1>
+        <p>Search our donor community and connect with people who can help.</p>
+    </div>
+
+    <form class="search-form" method="POST" action="/search">
+
+        <label>Select Blood Group</label>
+        <select name="blood_group" required>
+            <option value="">Choose Blood Group</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            <option>O+</option>
+            <option>O-</option>
+        </select>
+
+        <label>Enter City</label>
+        <input type="text" name="city" placeholder="Enter your city" required>
+
+        <button type="submit" class="btn search-button">
+            Search Donors
+        </button>
+
+    </form>
+
+    {% if searched %}
+        <div class="results">
+            <h2>Search Results</h2>
+
+            {% if donors %}
+                {% for donor in donors %}
+                <div class="donor-card">
+                    <h3>{{ donor[1] }}</h3>
+                    <p><strong>Blood Group:</strong> {{ donor[4] }}</p>
+                    <p><strong>City:</strong> {{ donor[7] }}</p>
+                    <p><strong>Phone:</strong> {{ donor[5] }}</p>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>No donors found for your search.</p>
+            {% endif %}
+        </div>
+    {% endif %}
+
+</section>
+
+<footer>
+    <h2>🩸 BloodConnect</h2>
+    <p>Connecting Donors. Saving Lives.</p>
+    <p>© 2026 BloodConnect. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

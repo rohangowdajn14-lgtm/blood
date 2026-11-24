@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile | BloodConnect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+    <div class="logo">🩸 BloodConnect</div>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</header>
+
+<section class="register-section">
+    <div class="register-heading">
+        <h1>Edit Your Profile ❤️</h1>
+        <p>Update your donor information below.</p>
+    </div>
+
+    <form class="register-form" method="POST" action="/edit-profile">
+
+        <label>Full Name</label>
+        <input type="text" name="full_name" value="{{ donor[1] }}" required>
+
+        <label>Age</label>
+        <input type="number" name="age" value="{{ donor[2] }}" required>
+
+        <label>Gender</label>
+        <select name="gender" required>
+            <option value="Male" {% if donor[3] == 'Male' %}selected{% endif %}>Male</option>
+            <option value="Female" {% if donor[3] == 'Female' %}selected{% endif %}>Female</option>
+            <option value="Other" {% if donor[3] == 'Other' %}selected{% endif %}>Other</option>
+        </select>
+
+        <label>Blood Group</label>
+        <select name="blood_group" required>
+            {% for group in ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'] %}
+                <option value="{{ group }}" {% if donor[4] == group %}selected{% endif %}>{{ group }}</option>
+            {% endfor %}
+        </select>
+
+        <label>Phone Number</label>
+        <input type="tel" name="phone" value="{{ donor[5] }}" required>
+
+        <label>Email Address</label>
+        <input type="email" name="email" value="{{ donor[6] }}" required>
+
+        <label>City</label>
+        <input type="text" name="city" value="{{ donor[7] }}" required>
+
+        <button type="submit" class="btn register-button">Save Changes</button>
+
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 BloodConnect | Every Drop Counts ❤️</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Dashboard | BloodConnect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+    <div class="logo">🩸 BloodConnect</div>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/search">Find Blood</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</header>
+
+<section class="register-section">
+    <div class="register-heading">
+        <h1>Welcome, {{ donor[1] }} ❤️</h1>
+        <p>Your Donor Dashboard</p>
+    </div>
+
+    <div class="register-form">
+        <h2>My Profile</h2>
+
+        <p><strong>Full Name:</strong> {{ donor[1] }}</p>
+        <p><strong>Age:</strong> {{ donor[2] }}</p>
+        <p><strong>Gender:</strong> {{ donor[3] }}</p>
+        <p><strong>Blood Group:</strong> {{ donor[4] }}</p>
+        <p><strong>Phone:</strong> {{ donor[5] }}</p>
+        <p><strong>Email:</strong> {{ donor[6] }}</p>
+        <p><strong>City:</strong> {{ donor[7] }}</p>
+
+        <a href="/edit-profile" class="btn register-button">Edit Profile</a>
+
+        <form method="POST" action="/delete-account"
+            onsubmit="return confirm('Are you sure you want to permanently delete your account?');">
+
+        <button type="submit" class="btn register-button">
+        Delete My Account
+    </button>
+
+</form>
+
+<a href="/logout" class="btn register-button">Logout</a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 BloodConnect | Every Drop Counts ❤️</p>
+</footer>
+
+</body>
+</html>
